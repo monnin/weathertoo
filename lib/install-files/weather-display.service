@@ -1,0 +1,16 @@
+[Unit]
+Description=Weather Display Service
+After=network.target
+
+[Service]
+Type=simple
+User=weather
+Group=weather
+WorkingDirectory=/home/weather/weather
+ExecStart=/usr/bin/python3 bin/waveshare-weather.py
+ExecStop=/usr/bin/pkill -f waveshare-weather.py
+Restart=on-failure
+RestartSec=30s
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,386 @@
+
+.wrapper {
+   display: flex;
+   }
+   
+.menu {
+    padding: 1em;
+    background: #5050ff;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    width: 15%;
+    height: 100vh;
+    }
+  
+.menu-item {
+	display: inline-block;
+	color: white;
+	padding: 1em;
+}
+
+.menu-item a {
+	text-decoration: none;
+	color: white;
+	}
+
+	
+.menu a:hover {
+	background-color: darkblue;
+	/* text-color: blue; */
+}
+
+.menu-subitem {
+}
+
+.main-page {
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   /* justify-content: center; */
+   align-items: left;
+   width: 85%;
+   overflow: scroll;
+   padding: 1em;
+   /* margin: auto; */
+   }
+   
+.header {
+   width: 100%;
+   background-color: darkblue;
+   color: white;
+   padding: 1em;
+   font-size: 24px;
+   font-weight: bold;
+   text-align: center;
+   }
+  
+.center { 
+    margin: 0 auto; 
+    text-align: center;
+    }
+
+.center_2 { 
+    margin: 0 auto; 
+    text-align: center;
+    padding-top: 0.5em;
+    }
+
+.left {
+    text-align: left;
+    float: left;
+	}
+
+.right {
+	text-align: right;
+	float: right;
+    }
+
+/*
+ *-----------------------------------------------
+ */
+.bottom_row {
+  position: absolute;
+  bottom: 0px;
+  width: 95%;
+  text-align: center;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  }
+
+.bottom_left {
+   display: inline-block;
+   float: left;
+   }
+   
+.bottom_right {
+  display: inline-block;
+  float: right;
+  }
+  
+.bottom_center {
+  display: inline-block;
+  text-align: center;
+  margin: auto;
+}
+
+/*
+ *-----------------------------------------------
+ */
+
+.grid-container {
+    display: grid;
+    width: 100%;
+    /* grid-template-columns: 22% 43% 25% 10%; */
+    grid-template-columns: 25% 45% 30%;
+    grid-template-rows: auto;
+    }
+
+.grid-file-container {
+    display: grid;
+    width: 100%;
+    /* grid-template-columns: 22% 43% 25% 10%; */
+    grid-template-columns: 60% 40%;
+    grid-template-rows: auto;
+    }
+
+.grid-button {
+    text-align: center;
+    padding: 1em;
+    }
+
+.grid-item {
+    /* margin: auto; */
+    text-align: left;
+    padding: 0.2em;
+    }
+
+.boxed {
+    border-radius: 15px;
+    border: 2px solid darkblue;
+    margin-top: 1em;
+    padding-bottom: 0.5em;
+    }
+
+.box-title {
+    background-color: #8080ff;
+    color: white;
+    padding-left: 0.75em;
+    border-bottom: 3px solid darkblue;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    /* text-align: center; */
+    }
+
+.in-circle {
+    display: block;
+    border: 2px solid darkblue;
+    background: #e0e0f8;
+    color: black;
+    height: 1.3em;
+    min-width: 1.3em;
+    font-size: 0.6em;
+    text-align: center;
+    border-radius: 50%;
+    
+    }
+/*
+ *--------------------------------------------------------------
+ */
+ 
+input[type=text] {
+    box-sizing: border-box;
+    width: 100%;
+    /* margin: 8px 1em; */
+    }
+
+/*
+ *--------------------------------------------------------------
+ */
+
+button {
+    cursor: pointer;
+    }
+
+btn_a {
+    text-decoration: none;
+    font-size: 0.8em;
+    font-family: arial;
+    min-width: 5em;
+    }
+
+.btn {
+	background-color: darkblue;
+	/* display: inline-block; */
+	/* text-decoration: none; */
+	color: white;
+	padding: 3px 12px;
+        margin-left: 0.25em;
+        margin-right: 0.25em;
+	border-radius: 8px;
+	border: 2px solid darkblue;
+	transition-duration: 0.4s;
+        text-decoration: none;
+        font-family: arial;
+        font-size: 0.8em;
+        min-width: 5em;
+}
+
+.btn:disabled, button[disabled] {
+    background-color: lightblue;
+    border: 2px solid lightblue;
+    font-style: italic;
+    color: grey;
+    text-decoration: none;
+    }
+
+.btn:hover:not([disabled]) {
+	background-color: white;
+	color: darkblue;
+	border: 2px solid darkblue;
+        text-decoration: none;
+	}
+
+
+.info_btn {
+    font-size: 1.3em;
+    font-weight: 500;
+    border: 0px;
+    background-color: white;
+    color: blue;
+    }
+
+.info_title_btn {
+    font-size: 1.3em;
+    font-weight: 500;
+    border: 0px;
+    background-color: #8080ff;
+    color: blue;
+    }
+
+
+/*
+ *--------------------------------------------------------------
+ */
+
+.textarea {
+    background-color: lightblue;
+    width: 80%;
+    height: 20em;
+    }
+
+
+/*
+ *--------------------------------------------------------------
+ */
+
+.info_outer {
+     position: absolute;
+
+	 min-height: 15%;
+	 max-height: 60%;
+	 min-width: 20%;
+     max-width: 50%;
+
+	 resize: both;
+     background-color: lightgrey;
+     border: 2px solid darkblue;
+     box-shadow: 10px 5px 5px darkgrey;
+     z-index: 10;
+     opacity: 0.95;  /* slightly opaque */
+     display: none;
+     padding: 0.5em;
+     }
+
+.info_inner {
+    margin-bottom: 1.5em;
+    }
+
+.infobox_btn_l {
+    /* display: block; 
+    margin-left: 2em;
+    margin-right: auto;
+	*/
+	float: left;
+    }
+
+.infobox_btn_r {
+    /* display: block; 
+    margin-left: auto;
+    margin-right: 2em;
+	*/
+	float: right;
+    }
+
+.info_button_span {
+    width: 100%;
+    }
+
+/*
+ *--------------------------------------------------------------
+ * https://www.w3schools.com/css/css_dropdowns.asp
+ */
+ /* Style The Dropdown Button */
+.dropbtn {
+  border: none; 
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 13em;
+  text-align: left;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 0.6em 0.5em;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #d0d0f8;
+    font-weight: bold;
+    }
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+./*
+ *--------------------------------------------------------------
+ */
+
+.about-table {
+    display: block;
+    margin-left:3em;
+    }
+
+.about-table td,th {
+    border: 1px solid black;
+    border-collapse: collapse;
+    }
+
+
+.about-table tr:nth-child(even) { background-color: #f2f2f2; }
+.about-table tr:hover { background-color: lightblue; }
+                                  
+/*
+ *--------------------------------------------------------------
+ */
+
+.one_iconset {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    }
+
+.icon {
+    padding: 1em;
+    border: 1px solid black;
+    text-align: center;
+    /* width: 20%; */
+    }
+                                  
+.icon_img {
+    width: 80%;
+    }

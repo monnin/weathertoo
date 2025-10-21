@@ -1,0 +1,11 @@
+#
+#  ical files
+#
+#  Place the URLs to one or more Internet calendars here.   They can be
+#  from Google, Apple, Microsoft, or elsewhere
+#
+#  For Google, see https://support.google.com/calendar/answer/37648 to show
+#  how to create a secret/private ical URL
+#
+#
+# Place one URL per line

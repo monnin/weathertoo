@@ -1,0 +1,16 @@
+[Unit]
+Description=Weather Multi-Display Sync Service
+After=network.target
+
+[Service]
+Type=simple
+User=weather
+Group=weather
+WorkingDirectory=/home/weather/weather
+ExecStart=/usr/bin/python3 bin/sync_sys.py
+ExecStop=/usr/bin/pkill -f sync_sys.py
+Restart=on-failure
+RestartSec=30s
+
+[Install]
+WantedBy=multi-user.target

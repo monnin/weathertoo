@@ -1,0 +1,74 @@
+day-skc: svg_set2/clear-day.svg
+night-skc: svg_set2/clear-night.svg
+
+#day-few: svg_set2/partly-cloudy-day.svg
+#night-few: svg_set2/partly-cloudy-night.svg
+day-few: svg_set2/clear-day.svg
+night-few: svg_set2/clear-night.svg
+few: svg_set2/clear-day.svg
+
+day-sct: svg_set2/partly-cloudy-day.svg
+night-sct: svg_set2/partly-cloudy-night.svg
+
+bkn: svg_set2/cloudy.svg
+
+day-ovc: svg_set2/overcast-day.svg
+night-ovc: svg_set2/overcast-night.svg
+ovc: svg_set2/overcast.svg
+
+wind_skc: svg_set1/wi-day-windy.svg
+wind_few: svg_set1/wi-day-cloudy-windy.svg
+wind_sct: svg_set1/wi-day-cloudy-gusts.svg
+wind_bkn: svg_set1/wi-cloudy-gusts.svg
+wind_ovc: svg_set1/wi-cloudy-windy.svg
+
+snow: svg_set2/snow.svg
+sleet: svg_set2/sleet.svg
+rain: svg_set2/rain.svg
+
+rain_showers: svg_set1/wi-showers.svg
+rain_showers_hi: svg_set1/wi-day-rain.scg
+
+tsra: svg_set2/thunderstorms.svg
+day-tsra: svg_set2/thunderstorms-day.svg
+night-tsra: svg_set2/thunderstorms-night.svg
+
+day-tsra_sct: svg_set1/wi-day-storm-showers.svg
+night-tsra_sct: svg_set1/wi-night-storm-showers.svg
+tsra_sct: svg_set1/wi-storm-showers.svg
+
+tsra_hi: svg_set1/wi-lightning.svg
+
+tornado: svg_set2/tornado.svg
+hurricane: svg_set2/hurricane.svg
+tropical_storm: svg_set2/code-yellow.svg
+day-dust: svg_set2/dust-day.svg
+night-dust: svg_set2/dust-night.svg
+dust: svg_set2/dust.svg
+smoke: svg_set2/smoke.svg
+
+day-haze: svg_set2/haze-day.svg
+night-haze: svg_set2/haze-night.svg
+
+haze: svg_set2/haze.svg
+hot: svg_set2/sun-hot.svg
+cold: svg_set1/wi-snowflake-cold.svg
+
+day-fog: svg_set2/fog-day.svg
+night-fog: svg_set2/fog-night.svg
+fog: svg_set2/fog.svg
+
+rain_snow: svg_set2/extreme-sleet.svg
+rain_sleet: svg_set2/extreme-sleet.svg
+
+day-snow_sleet: svg/extreme-day-sleet.svg
+night-snow_sleet: svg/extreme-night-sleet.svg
+snow_sleet: svg/extreme-sleet.svg
+
+fzra: svg_set2/code-yellow.svg
+rain_fzra: svg_set2/code-yellow.svg
+snow_fzra: svg_set2/code-yellow.svg
+
+blizzard: svg_set2/code-yellow.svg
+
+

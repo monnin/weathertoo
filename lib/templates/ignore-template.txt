@@ -1,0 +1,13 @@
+#
+# ignore files
+#
+# An ignore file is used to hide items from an ical calendar.   Event names are
+# compared to each line and if there is a match, that item is not displayed.
+#
+#  Events are compared in a case insensitive manner (so "Hold", "HOLD", and "hold" all match)
+#
+#  You can also use * and ? wildcards (* matches any # of chars, and ? matches any single char)
+#
+#  Whether or not Private meetings are displayed is NOT controlled by this file, but
+#  by the argument to the draw_calendar() command in a display configuration file.
+#

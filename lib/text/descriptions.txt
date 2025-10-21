@@ -1,0 +1,253 @@
+home:
+    <p>Welcome to the control panel for the weather display.   If this is
+    the first time using the device, please start with the
+    <a href="/init">Intial Setup</a> and work through the various
+    configuration menus.</p>
+    
+init:
+    This is where you enter the parameters that are normally only
+    needed to be set once.
+    
+                             
+loc:
+    <p>Enter the the location you wish to show the weather for.  This
+    becomes the default location, and can be overridden when in
+    the display section to show multiple
+    weather sites.</p>
+     
+    <p>You can enter your location 
+    as <b>either</b> your street address <b>or</b> your latitude and longitude.
+    The street address is not stored and is only used to look up your
+    latitude and longitude.</p>
+
+weather:
+    <p>In this section, select which of NOAA's observation stations
+    you wish.  You can select multiple locations, and the system
+    will use the first one that has valid data.</p>
+    
+    You can also configure what watch area ("zones") that you
+    wish to monitor for NOAA alerts.  This can be either a specific
+    small zone or a (larger) county-wide zone.</p>
+     
+    <p>Finally, you can select which location ("Tide Port") to use
+    when reporting the local tide</p>
+
+email_addr:
+    The program uses a NOAA web-based API to retrieve weather data.
+    NOAA requires an email address be part of the web requests so it
+    can notify you if the program is misbehaving (which shouldn't happen).
+    The program does not use your email address in any other manner.
+                                                  
+timezone:
+     Given in Linux timezone format (e.g. "America/New_York").
+
+lat_lon:
+     Your latitude and longitude to use as the location for various
+     weather data.  The two (floating point) numbers are seperated by a
+     comma with latitude first (e.g.  43.6795, -70.444 for Gorham, Maine, US).
+
+addr:
+    This is your street address followed by the city name and
+    state (for US locations).  You do not have to specify the
+    zip code.
+
+wifi_ssid:
+    This is the network "name" for you Wi-Fi network.
+
+wifi_pass:
+     This is the "password" (key) for your Wi-Fi network.  For
+     security purposes, it is not shown in the control panel
+     after it stored.
+
+forecast_zone:
+     This is the name (given by weather.gov) to represent your
+     a small zone that includes your (default) location.  It has the
+    form of three-letters, a forward slash, and then two integers
+    (representing a portion of the location).  (e.g. GYX/68.40)
+
+     <p>Only one (default) forecast zone is permitted. This becomes
+     the default location for all weather output, but can be
+     overridden in the display section if you wish to show the
+     weather for multiple locations.</p>
+
+
+alert_zone:
+     The weather display can show weather alerts for a specific
+     zone or for the entire county that you are located in.
+     Zones typically start with a two letter abbreviation for
+     the state, followed by a "Z" for a zone (smaller than a
+     county) or "C" (for the entire county).
+
+obs_stations:
+     This is an <b>ordered</b> list of observation stations to
+     look up currect conditions on.  Due to the way the stations
+     provide data, the primary location might not have current
+     data, and then the subsequent observation station is used.
+     <p>Each station has the form of a US callsign, and typically
+     are four characters, starting with a "K".</p>
+
+tide_station:
+     This is the location (e.g. a port) to look up information
+     about high and low tides.  The tide station is given as
+     an (integer) number.  Only one tide station is permitted.
+     
+calendar:
+    Use this page to control how the calendar section of the display.
+    If you do not intend to use the calendar functions at this time, you do not
+    need to configure anything here.
+
+ical:
+    <p>You can allow the display to look at one or more remote calendars,
+    as long as they use the
+    <a href="https://en.wikipedia.org/wiki/ICalendar">ical</a>
+    Apple, Google, and Microsoft all support the ical format.</p>
+    <p>You may enter multiple ical URLs in a file (one URL per line)
+    and/or use multiple files.</p>
+
+
+ignore:
+    These files control which calendar events are not displayed by
+    comparing the calendar description against wildcarded strings.
+    For instance, placing a line that says "<b>hold*</b>" will stop any
+    calendar event that starts with the word hold from displaying.
+
+ignore-2:
+    The lines can use a Unix/Linux-style wildcarding, so a "a*b" would
+    match all events starting with an <b>a</b> and ending with a <b>b</b>,
+    while the question mark (<b>?</b>) is used to match a single character.
+    Additionally, all comparisons are case-insensitive (so the titles
+    "hold" and "HOLD" would match).
+
+daily:
+    These files control recurring events that  have a rotation other than
+    on specific days (including both weekday and weekends).  One example
+    might be a simple rotation of who's turn it is to make or cleanup dinner.
+                                                  
+weekday:
+    These files control recurring events that happen on Monday-Friday
+    only (hence "weekday") and might have a rotation other than
+    on specific days.  One example might be a K12 school calendar that
+    has "core" days that occur in a 6-day cycle.
+
+weekday-2:
+    <p>The line <b>offset = ##</b> is used to change the starting point
+    of the sequence, and can be <i>any</i> positive or negative number.
+    The number does <b>not</b> have to be in the
+    range of the number of events.</p>
+                                                        
+    <p>If the calendar is <i>behind</i> by one day, just increase the
+    offset by one.  If the calendar is <i>ahead</i> by a day, subtract
+    one of the current offset (which is where negative numbers could
+    be useful).</p>
+
+countdown:
+    Countdown files contain lines that cause the calendar to
+    indicate the number of days until that event (e.g. "5 days until Chrismas").
+    The format is the date, followed by the event name.   If the date does
+    not have a year, the countdown will happen each year.
+
+countdown-2:
+    <p>The <b>days = ##</b> line instructs the system to show the events
+    <i>following</i> that line with that many days in advance (with the default
+    being 7 days.  The <b>days</b> line can occur multiple times in a
+    single configuration file.</p>
+
+    <p>The line <b>multiyear = true</b> changes the behaviour if a year
+    is present in the date.  When <b>multiyear</b> is enabled, the event
+    occurs every year and the literal word <b>nth</b> in the event name
+    is changed
+    to the appropriate designation (e.g. 1st, 2nd, 3rd).</p>
+                                                  
+edit:
+    <p>Like all configuration files, you can place comments within the
+    files by starting
+    with the
+    pound sign (<b>#</b>).  Comments can be at the start of the
+    line or at the end of line.  Additionally, blank lines in the
+    file are ignored.
+
+active:
+    This is the active display template.  Only one display template can be chosen
+    at any given time.   If the network is not connected, the system will use a
+    <b>special</b> template and not this one.
+
+screen:
+    These are the templates used to change what information is displayed on
+    the screen and what format.   You can either use one of the default templates,
+    or create your own.
+
+display:
+   These are the templates that you have created (or have copied from the
+   provided templates.   These are optional.  You do not need to create a display
+   template, but instead can use on of the pre-built templates instead.
+
+sys-display:
+   These are the templates that come bundled with the program.   You may
+   edit these by creating a copy of one (or more) of them first.  The (editable) copies
+   will then appear in the "Your Display Templates" section.
+
+iconset:
+    <p><b>Icon Sets</b> are used to alter the pictures displayed with
+    various weather conditions and forecast.   They convert a condition
+    (e.g. "bkn" or "day-bkn") into a given SVG filename.  These are optional.
+    You do not have to
+    create your own Icon Sets if you do not wish to, and can use the pre-built
+    icon sets (or chose no set to use the official NOAA icons).</p>
+    <p>If no match is encountered, the version from the NOAA website is used.</p>
+
+sys-iconset:
+    These are the icon sets that are bundled with the program.  You may
+   edit these by creating a copy of one (or more) of them first.  The (editable) copies
+   will then appear in the "Your Icon Sets" section.
+
+backres-restart:
+   After a restore, you may want to restart the programs.  Additionally,
+   the Wi-Fi password is never stored in the backup, so you might have to re-enter
+   it after any restore that affects changes the network settings.
+
+rotate:
+   How the screen is (digitally) rotated prior to displaying on the e-Paper screen.  This
+   does not affect how the screen is shown in the "Preview Display" setting.
+
+sync:
+   <p>This is optional and <b>only</b> necessary if you wish to run more than one displays and
+   have the configuration copied from one display to other displays.  This is
+   done by regularly copying config files from a remote display if it has
+   been updated.  You can choose to keep all files in sync, keep all files
+   of a specific type in sync, or choose individual files.</p>
+   <p>Enter the IP address (or DNS name) of the display you wish to copy the files from,
+   and possibly followed by an equals sign (=), and then followed by the remote display's <i>sync</i>
+   password.  Sync passwords are not the same as the password you use to view the web page).</p>
+   <p>You can sync from a single unit or chose to copy files from multiple
+   sources.  However, it always recommended to have the sync operations
+   go in a single direction.</p>
+   <p><i>Note:</i> Sync works best when the source system has a IP address that
+   does not change (e.g., the source display has a static DHCP entry).</p>
+
+password:
+   Use this page to change the <b>web</b> password (aka the one you used to get to this page).  This is different than
+   the password used between two displays that are keeping the configuration files synchronized.
+
+web_password:
+   Enter a new password to use to access this web site.  It is stored in a semi-secure method ("hashed").
+
+sync_password:
+   <p>This is the password that other displays will use to read this device's configuration files
+   as well as the default password if no password is given in the configuration lines.  Make
+   it <b>different</b> than the web password.  You do not need to set it if this system will not be the
+   <b>source</b> of configuration changes. </p>
+   <p><i>Warning:</i> It is not stored in a secure manner, so do not reuse this password from any other account.</p>
+  
+sync_server:
+   Do you want the files on this display to be available to other displays?  If you enter "No", you still can (use
+   the password to) copy files from other displays to this display.
+
+sync-w-all:
+    Copy ALL files from the remote display.
+	
+sync-w-base:
+    Keep the forecast zone, alert zone, tide location, web password, latitude and longitude the same as the remote display.
+
+sync_cleanwildcards:
+    (Only for sync destinations): For the wildcard Do you want to remove any
+    local file that does not have a corresponding file on the remote server?

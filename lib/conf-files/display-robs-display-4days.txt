@@ -1,0 +1,128 @@
+width=800
+height=480
+color=0
+
+y_upper_line = 160
+y_lower_line = 270
+y_lowest_line = height-26
+
+ss_y_line = height - 26
+
+tide_height = 180
+
+weather_width = width * 2 / 3
+
+day_width = weather_width / 4
+
+# Calculated
+col_two = weather_width + 2
+col_two_width = width - col_two
+
+x_last_row = weather_width - 110  # For current condition & tides
+
+#--------------------------------------------
+ 
+# Make two vertical lines between weather and calendar
+vline( x=weather_width )
+vline( x=weather_width+2 )
+
+# Make a horizontal lines for weather
+hline( y=y_upper_line, width=weather_width )
+hline( y=y_lower_line, width=weather_width )
+
+# Draw the horizontal lines for the tides
+#hline( y=y_lowest_line-2, width=weather_width )
+#hline( y=y_lowest_line,   width=weather_width )
+
+# Draw the horizontal lines for sunrise/sunset
+#hline( x=weather_width+2, y=y_lowest_line-2, width=cal_width )
+#hline( x=weather_width+2, y=y_lowest_line,   width=cal_width )
+
+
+#--------------------------------------------
+alert_line=y_upper_line+3
+
+alert_height = draw_alerts( x=0, y=alert_line, \
+                            width=weather_width, \
+                            max_alerts=3, \
+                            at_bottom=1, \
+                            height = y_lower_line-alert_line)
+
+#--------------------------------------------
+
+tide_y_start=height - tide_height - 2
+draw_tide( x=col_two, y=tide_y_start, \
+           width=col_two_width, height=tide_height - 4, \
+           font_size=18, mode='v_bottom')
+
+tide_y_start=tide_y_start - 6
+hline( x=col_two, y=tide_y_start, width=col_two_width)
+
+
+draw_ipaddr( x=width, y=height, bottom_left=1, last_octet_only=1 )
+
+draw_sunrise_sunset( x=col_two + 5, y=4, width=col_two_width - 5)
+hline( x=col_two, y=36, width=col_two_width)
+
+#--------------------------------------------
+
+calendar_height=120
+
+draw_calendar( x= col_two, y=40, \
+               width=col_two_width, height=calendar_height, \
+               show_private=0 )
+
+hline( x=col_two, y=40+calendar_height-2, width=col_two_width)
+
+hwo_y_start=40+calendar_height
+# Add a margin to the two sides, allow space for letters going below (e.g. j)
+draw_hwo( x=col_two+12, y=hwo_y_start, width=col_two_width-24, \
+          height=tide_y_start-hwo_y_start-4, \
+          remove_current_alert=1, \
+          font_size=14, \
+          add_title=1)
+
+#--------------------------------------------
+
+
+#  Show today's forecast
+
+text_start=y_upper_line+3
+text_forecast( y=text_start, \
+               width=weather_width, \
+               height=y_lower_line-text_start-alert_height, \
+               font_size=20 )
+
+current_obs( x=weather_width-120, y=15, width=90, height=100 )
+
+# Big icon
+icon_size=y_upper_line
+draw_forecast(x=0, y=0, icon_size=icon_size, items="icon", width=weather_width)
+
+# Today's forecast
+draw_forecast(x=20, y=50, width=95, \
+              items="date, hi, line, low", \
+              font_size=44, small_font_size=10)
+
+#--------------------------------------------
+
+time24( x=10, y=10, font_size=36 )
+#current_date( x= col_two, width=col_two_width, y = 38, font_size=24 )
+
+#--------------------------------------------
+
+              
+#
+#  4-day forecast
+#
+
+draw_forecast( x=0, y=y_lower_line+4, width=day_width, day=1)
+
+vline (x=day_width, y=y_lower_line, height=y_lowest_line-y_lower_line)
+draw_forecast( x=day_width, y=y_lower_line+4, width=day_width, day=2)
+
+vline (x=day_width*2, y=y_lower_line, height=y_lowest_line-y_lower_line)
+draw_forecast( x=day_width*2, y=y_lower_line+4, width=day_width, day=3)
+
+vline (x=day_width*3, y=y_lower_line, height=y_lowest_line-y_lower_line)
+draw_forecast( x=day_width*3, y=y_lower_line+4, width=day_width, day=4)

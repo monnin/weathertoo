@@ -1,0 +1,17 @@
+width=800
+height=480
+color=0
+
+center_text(x=20, y=40, width=width-40, s="No Internet Connection", bgcolor='black', color='white', font_size=24)
+
+center_text(y=100, font_size=20, s="If this is your first time using this station, you will need to")
+center_text(y=120, font_size=20, s="first connect it to your network.")
+
+center_text(y=210, font_size=20, s="You can configure or check your network settings by going to:")
+center_text(y=260, s="Wi-Fi SSID: " + get_param(p="active-ssid"), font_size=30)
+
+center_text(y=320, s="http://" + get_param(p="active-ipaddr") + ":8888/init", font_size=30)
+center_text(y=360, s="Use \"admin\" [without the quotes] as the user name", font_size=26)
+center_text(y=390, s=get_pin_line(), font_size=26)
+
+current_time( x=width-120, y=height-60, font_size=36 )

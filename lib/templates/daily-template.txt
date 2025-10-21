@@ -1,0 +1,17 @@
+#
+#  daily files
+#
+#  "daily" files contain items that regularly rotate (but not necessarily on a weekly
+#  schedule).   If this file contains three (3) items, each one will appear every three
+#  days (including both weekday and weekend days).
+# 
+#  If you want to skip a day, enter only a hypen (-) on the day, and no information
+#  will be displayed on that day.
+#
+#  You can also add a line in the form:
+#
+#       offset=###
+# 
+#  To shift which event happens today without changing the other lines.  Any positive
+#  or negative number can be used to increment/decrement which item is the active item
+#  for today.

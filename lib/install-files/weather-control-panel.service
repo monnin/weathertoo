@@ -1,0 +1,16 @@
+[Unit]
+Description=Weather Display Control Panel
+After=network.target
+
+[Service]
+Type=simple
+User=weather
+Group=weather
+WorkingDirectory=/home/weather/weather
+ExecStart=/usr/bin/python3 bin/web_server.py
+ExecStop=/usr/bin/pkill -f bin/web_server.py
+Restart=on-failure
+RestartSec=30s
+
+[Install]
+WantedBy=multi-user.target

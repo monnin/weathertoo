@@ -1,0 +1,15 @@
+width=800
+height=480
+color=0
+
+center_text(y=40, s="Can't Find the Configured Display", bgcolor='black', color='white', font_size=24)
+
+center_text(y=100, font_size=24, s="The display named:")
+center_text(y=140, s=get_param(p="active-display"), font_size=28, is_bold=1)
+center_text(y=180, s="...cannot be found.", font_size=24)
+
+center_text(y=260, font_size=22, s="Please check the configuration on the Control Panel's Display settings:")
+
+center_text(y=300, s="http://" + get_param(p="active-ipaddr") + ":8888/display", font_size=30)
+
+current_time( x=width-120, y=height-60, font_size=36 )

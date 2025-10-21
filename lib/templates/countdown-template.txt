@@ -1,0 +1,31 @@
+#
+# countdown files
+#
+#
+#  A countdown file can be used to show how many days until a number of events.
+#
+#	A typical line looks like:
+#
+#	mm/dd/yyyy Event Name
+#   mm/dd      Event Name 2
+#
+#  Each line represents a specific event, and can include the year (to show once)
+#  or without the year if the countdown is shown every year.
+#
+#  DAYS:
+#
+#  A line of "days=###" controls how many days in advance will the subsequent
+#  events will show (with a default of 7 days if the line is not present).
+#
+#  A file can contain multiple "days=###" lines, as each only affects the entries
+#  AFTER the line.
+#
+#  MULTIYEAR:
+#
+#  Additionally, countdown files have a special format (by starting the line with an
+#  astersisk (*) by using the "multiyear=1" line.  With multiyear, the year is
+#  ignored when computing if the event is upcoming or not, but also the letters "nth"
+#  in an event name is replaced with the "1st", "2nd", "3rd", etc. as necessary.
+#
+#   (e.g. *10/10/2020  John's nth Birthday)
+#

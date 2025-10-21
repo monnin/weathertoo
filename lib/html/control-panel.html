@@ -1,0 +1,68 @@
+<html>
+<head>
+<link rel="stylesheet" href="/static/control-panel.css" />
+</head>
+
+<body>
+<script type="text/javascript" src="/static/control-panel.js"></script>
+
+<div class="header">Weather Station - Control Panel</div>
+
+<div class="wrapper">
+
+<nav class="menu">
+First Time Only:
+<a href="/init"><li class="menu-item">Initial Setup</li></a>
+<br />
+
+Configure:
+<a href="/loc"><li class="menu-item">Location &amp; Time</li></a>
+<a href="/weather"><li class="menu-item">Weather</li></a>
+<a href="/calendar"><li class="menu-item">Calendar</li></a>
+<a href="/display"><li class="menu-item">Screen / Display</li></a>
+<a href="/sync"><li class="menu-item">Config File Sync</li></a>
+<br />
+
+System:
+<a href="/preview"><li class="menu-item">Preview Display</li></a>
+<a href="/password"><li class="menu-item">Change Web Password</li></a>
+<a href="/iconsets"><li class="menu-item">Preview Icon Sets</li></a>
+<a href="/backres"><li class="menu-item">Backup &amp; Restore</li></a>
+<a href="/restart"><li class="menu-item">Restart System</li></a>
+<a href="/about"><li class="menu-item">About</li></a>
+
+</nav>
+
+<main class="main-page">
+<div>{{!main}}</div>
+<br /><br />
+</main>
+
+<div class="info_outer" id="info_block">
+    <div class="info_inner" id="info_out"></div>
+
+    <div class="info_textbox" id="info_textbox">
+       <input type="text" width="40em" id="textbox1" name="alt_textbox" />
+    </div>
+
+    <div class="bottom_row">
+        <span class="bottom_left">
+             <button id="l_button" onclick="hideInfoBlock()">L OK</button>
+        </span>
+
+		<span class="bottom_right">
+             <button id="r_button" onclick="hideInfoBlock()">R OK</button>
+        </span>
+		<span class="bottom_center"> </span>
+    </div>
+
+</div>
+
+</div>
+
+<form method="post" id="hidden_form" action="">
+  <input type="hidden" id="hidden_form_textbox" name="value" />
+</form>
+
+</body>
+</html>

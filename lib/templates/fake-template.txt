@@ -1,0 +1,7 @@
+#
+# Fake files can have comments within them (by using "#").
+#
+# You can use this to (temporarily) remove items that are not currently
+# active.   Comments at the end of the line are permitted to
+#
+# Additionally, any blank lines are ignored.

@@ -1,0 +1,186 @@
+<html>
+
+{{ICON_PATH=""}}
+{{ICON_STYLE="alt_large"}}
+
+<head>
+  <title>Local Weather Conditions</title>
+  <link rel="stylesheet" href="weather-style.css" />
+</head>
+
+<body>
+	<h2>Local Weather</h2>
+
+	<div class="flex-row">
+	   <div class="flex-col">
+		<div class="flex-item w20">
+			<br />
+			<br />
+			<div class="dayname">{{forecast(day=0, obj='name')}}</div>
+			<br />
+			<div class="hilo_box">
+				<div class="hilo">Hi</div>
+				<div class="hilo_temp">{{forecast(day=0, obj='hi')}}</div>
+				<div class="hilo_border"></div>
+				<div class="hilo">Lo</div>
+				<div class="hilo_temp">{{forecast(day=0, obj='low')}}</div>
+			</div>
+		</div>
+
+		<div class="flex-item w60">
+			<div class="bigicon">
+                           {{forecast_icon(day=0, style=ICON_STYLE)}}
+			</div>
+		</div>
+
+		<div class="flex-item w20">
+			<br />
+			<br />
+			<div class="dayname">CURRENTLY</div>
+			<br />
+			<div class="temphum_box">
+				<div class="temphum_title">TEMP</div>
+				<div class="temphum_val">{{current_obs(obj='temp')}} &nbsp; </div>
+				<div class="temphum_icon"><img src="{{ICON_PATH}}icons/svg_set2/thermometer-fahrenheit.svg" class="filter-white"></div>
+
+				<div class="temphum_border"></div>
+
+				<div class="temphum_title">Humidity</div>
+				<div class="temphum_val">{{current_obs(obj='humidity')}}</div>
+				<div class="temphum_icon"><img src="{{ICON_PATH}}icons/svg_set2/humidity.svg" class="filter-white"></div>
+			</div>
+		</div>
+	   </div>
+	</div>
+
+	<div class="flex-row">
+		<div class="flex-item">
+			<div class="today_s_forecast">{{forecast(day=0, obj='short')}}</div><br /><br />
+			<div class="today_l_forecast">{{forecast(day=0, obj='long')}}</div></br />
+			<div class="alerts">{{output_alerts()}}</div>
+		</div>
+	</div>
+
+	<div class="flex-row">
+	   <div class="flex-col">
+		<div class="flex-item w16">
+			<div class="dayname">{{forecast(day=1, obj='name')}}</div> <br />
+			<div class="smallicon">{{forecast_icon(day=1, style=ICON_STYLE)}}</div>
+			<div class="dayforecast">{{forecast(day=1, obj='short')}}</div>
+			<br />
+			<div class="hilo_box near_bottom">
+				<div class="hilo">Hi</div>
+				<div class="hilo_temp">{{forecast(day=1, obj='hi')}}</div>
+				<div class="hilo_border"></div>
+				<div class="hilo">Lo</div>
+				<div class="hilo_temp">{{forecast(day=1, obj='low')}}</div>
+			</div>
+		</div>
+
+		<div class="flex-item w16">
+			<div class="dayname">{{forecast(day=2, obj='name')}}</div> <br />
+			<div class="smallicon">{{forecast_icon(day=2, style=ICON_STYLE)}}</div>
+			<div class="dayforecast">{{forecast(day=2, obj='short')}}</div>
+			<br />
+			<div class="hilo_box near_bottom">
+				<div class="hilo">Hi</div>
+				<div class="hilo_temp">{{forecast(day=2, obj='hi')}}</div>
+				<div class="hilo_border"></div>
+				<div class="hilo">Lo</div>
+				<div class="hilo_temp">{{forecast(day=2, obj='low')}}</div>
+			</div>
+		</div>
+
+		<div class="flex-item w16">
+			<div class="dayname">{{forecast(day=3, obj='name')}}</div><br />
+			<div class="smallicon">
+				{{forecast_icon(day=3, style=ICON_STYLE)}}
+			</div>
+			<div class="dayforecast">{{forecast(day=3, obj='short')}}</div> <br />
+
+			<div class="hilo_box near_bottom">
+				<div class="hilo">Hi</div>
+				<div class="hilo_temp">{{forecast(day=3, obj='hi')}}</div>
+				<div class="hilo_border"></div>
+				<div class="hilo">Lo</div>
+				<div class="hilo_temp">{{forecast(day=3, obj='low')}}</div>
+			</div>
+		</div>
+
+		<div class="flex-item w16">
+                     <div class="dayname">{{forecast(day=4, obj='name')}}</div> <br />
+			<div class="smallicon">
+				{{forecast_icon(day=4, style=ICON_STYLE)}}
+			</div>
+			<div class="dayforecast">{{forecast(day=4, obj='short')}}</div> <br />
+			<div class="hilo_box near_bottom">
+				<div class="hilo">Hi</div>
+				<div class="hilo_temp">{{forecast(day=4, obj='hi')}}</div>
+				<div class="hilo_border"></div>
+				<div class="hilo">Lo</div>
+				<div class="hilo_temp">{{forecast(day=4, obj='low')}}</div>
+			</div>
+		</div>
+
+		<div class="flex-item w16">
+                     <div class="dayname">{{forecast(day=5, obj='name')}}</div><br />
+			<div class="smallicon">
+				{{forecast_icon(day=5, style=ICON_STYLE)}}
+			</div>
+			<div class="dayforecast">{{forecast(day=5, obj='short')}}</div> <br />
+			<div class="hilo_box near_bottom">
+				<div class="hilo">Hi</div>
+				<div class="hilo_temp">{{forecast(day=5, obj='hi')}}</div>
+				<div class="hilo_border"></div>
+				<div class="hilo">Lo</div>
+				<div class="hilo_temp">{{forecast(day=5, obj='low')}}</div>
+			</div>
+		</div>
+
+		<div class="flex-item w16">
+                     <div class="dayname">{{forecast(day=6, obj='name')}}</div><br />
+			<div class="smallicon">
+				{{forecast_icon(day=6, style=ICON_STYLE)}}
+			</div>
+			<div class="dayforecast">{{forecast(day=6, obj='short')}}</div> <br />
+			<div class="hilo_box near_bottom">
+				<div class="hilo">Hi</div>
+				<div class="hilo_temp">{{forecast(day=6, obj='hi')}}</div>
+				<div class="hilo_border"></div>
+				<div class="hilo">Lo</div>
+				<div class="hilo_temp">{{forecast(day=6, obj='low')}}</div>
+			</div>
+		</div>
+	   </div>
+	</div>
+
+	<div class="flex-row border">
+		<div class="flex-col">
+			<div class="w5">
+				<img src="{{ICON_PATH}}icons/svg_set2/sunrise.svg" class="filter-white v_small_icon" />
+				</div>
+			<div class="w5 v_center">
+				<b>Sunrise</b><br />
+				{{output_sun(obj='rise')}}</div>
+			<div class="w80"></div>
+			<div class="w5 t_right v_center">
+				<b>Sunset</b><br />{{output_sun(obj='set')}}
+				</div>
+			<div class="w5">
+				<img src="{{ICON_PATH}}icons/svg_set2/sunset.svg" class="filter-white v_small_icon" />
+				</div>
+
+		</div>
+	</div>
+
+	<div class="flex-row border">
+		<div class="flex-col">
+			<div class="w20"><b>Last Tide:</b> &nbsp; {{tide_time(num=0)}}</div>
+			<div class="w50 v_center">&rarr; &nbsp; &rarr; &nbsp; &rarr; </div>
+			<div class="w30 t_right"><b>Next Tides:</b> &nbsp; {{tide_time(num=1)}} &rarr; {{tide_time(num=2)}}</div>
+		</div>
+	</div>
+
+	<p><i>All temperatures are in Fahrenheit, and all times are in the local timezone. Last updated {{current_time()}}</i></p>
+</body>
+</html>
