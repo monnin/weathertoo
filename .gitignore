@@ -1,0 +1,12 @@
+etc/*
+__pycache__/
+save-etc
+restore-test
+tmp
+tests
+old
+.cache
+log
+lib/fonts/**
+*.docx
+*.pyc
