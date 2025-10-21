@@ -1,0 +1,10 @@
+pip3 install argon2-cffi
+pip3 install bottle
+pip3 install gevent
+pip3 install icalendar
+pip3 install pillow
+pip3 install psutil
+pip3 install pytz
+pip3 install requests_cache
+pip3 install recurring_ical_events
+pip3 install suntime
